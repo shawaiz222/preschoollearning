@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kids_learning/Component/web_view.dart';
 
 import '/Model/m_learn.dart';
 
@@ -10,12 +11,12 @@ class CardVideo extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // var route = MaterialPageRoute(
-        //     builder: (context) => AppWebView(
-        //           title: data.title,
-        //           url: data.pageUrl,
-        //         ));
-        // Navigator.push(context, route);
+        var route = MaterialPageRoute(
+            builder: (context) => AppWebView(
+                  title: data.title,
+                  url: data.pageUrl,
+                ));
+        Navigator.push(context, route);
         print('index');
       },
       child: Container(

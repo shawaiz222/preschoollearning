@@ -1,42 +1,39 @@
-// import 'dart:io';
+import 'package:flutter/material.dart';
+import 'package:kids_learning/Component/appBar.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
-// import 'package:flutter/material.dart';
-// import 'package:kids_learning/Component/appBar.dart';
-// import 'package:webview_flutter/webview_flutter.dart';
+class AppWebView extends StatefulWidget {
+  final String title;
+  final String url;
 
-// class AppWebView extends StatefulWidget {
-//   final String title;
-//   final String url;
-//   AppWebView({
-//     required this.title,
-//     required this.url,
-//   });
+  const AppWebView({
+    Key? key,
+    required this.title,
+    required this.url,
+  }) : super(key: key);
 
-//   @override
-//   _AppWebViewState createState() => _AppWebViewState();
-// }
+  @override
+  _AppWebViewState createState() => _AppWebViewState();
+}
 
-// class _AppWebViewState extends State<AppWebView> {
-//   @override
-//   @override
-//   void initState() {
-//     // تشتغل مرة واحدة عند تشغيل الصفحة
-//     super.initState();
-//     if (Platform.isAndroid)
-//       WebView.platform = SurfaceAndroidWebView(); // تسرع النت
-//   }
+class _AppWebViewState extends State<AppWebView> {
+  late final WebViewController _controller;
 
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         appBar: AppBarSimple(
-//           title: widget.title,
-//         ),
-//         body: SafeArea(
-//           child: WebView(
-//             initialUrl: widget.url,
-//             javascriptMode:
-//                 JavascriptMode.unrestricted, // يفعل لكبسات داخل الويب
-//           ),
-//         ));
-//   }
-// }
+  @override
+  void initState() {
+    super.initState();
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..loadRequest(Uri.parse(widget.url));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBarSimple(title: widget.title),
+      body: SafeArea(
+        child: WebViewWidget(controller: _controller),
+      ),
+    );
+  }
+}

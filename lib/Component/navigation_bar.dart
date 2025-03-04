@@ -28,7 +28,7 @@ class CustomNavigationBar extends StatelessWidget {
           color: Colors.white,
         ),
       ],
-   //  onTap: onClock,
+    onTap: onClock,
     );
   }
 }

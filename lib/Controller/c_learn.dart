@@ -2,7 +2,9 @@ import 'dart:collection';
 
 import 'package:kids_learning/Model/m_learn.dart';
 import 'package:kids_learning/views/Alphabet_Screen.dart';
+import 'package:kids_learning/views/Animal_Screen.dart';
 import 'package:kids_learning/views/alphabet_Screen2.dart';
+import 'package:kids_learning/views/colors_screen.dart';
 import 'package:kids_learning/views/number_screen.dart';
 
 class ControllerLearn {
@@ -24,17 +26,17 @@ class ControllerLearn {
     ),
     //
     //
-    // ModelLearn(
-    //   title: 'Learn Colors',
-    //   image: 'assets/images/colors.jpeg',
-    //   page: ColorsScreen(),
-    // ),
-    // ModelLearn(
-    //   title: 'حيوانات',
-    //   image: 'assets/images/animals.jpg',
-    //   page: AnimalScreen(),
-    // ),
-    //
+    ModelLearn(
+      title: 'Learn Colors',
+      image: 'assets/images/colors.jpeg',
+      page: ColorsScreen(),
+    ),
+    ModelLearn(
+      title: 'Learn Animal Names',
+      image: 'assets/images/animals.jpg',
+      page: AnimalScreen(),
+    ),
+    
     
   ];
 
