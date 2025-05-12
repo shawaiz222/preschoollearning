@@ -3,7 +3,8 @@ import 'package:kids_learning/Model/m_learn.dart';
 class ControllerVideo {
   static List<ModellPages> _dataVideo = [
     ModellPages(
-        imageUrl: 'https://i.ytimg.com/vi/MGyFM2ddbp4/mqdefault.jpg',
+        imageUrl:
+            'https://media.pocketgamer.com/artwork/na-riyua/dino_run_2.jpg',
         title: 'Learn Colors with Cars in English for Kids',
         pageUrl: 'https://youtu.be/MGyFM2ddbp4'),
     ModellPages(

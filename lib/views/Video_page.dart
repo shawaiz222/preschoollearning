@@ -11,7 +11,10 @@ class PageVideo extends StatelessWidget {
       itemCount: ControllerVideo.dataLength,
       itemBuilder: (context, index) {
         ModellPages video = ControllerVideo.dataVideo[index];
-        return CardVideo(data: video);
+        return CardVideo(
+          data: video,
+          name: video.title,
+        );
       },
     ));
   }

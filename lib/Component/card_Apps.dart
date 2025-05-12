@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kids_learning/Component/web_view.dart';
 import 'package:kids_learning/Model/m_learn.dart';
 
 class CardApps extends StatelessWidget {
   final ModellPages data;
-  CardApps({required this.data});
+  final RxBool isLoading;
+
+  CardApps({
+    required this.data,
+    required this.isLoading,
+  });
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -29,12 +36,17 @@ class CardApps extends StatelessWidget {
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Column(
             children: [
-              Expanded(
-                flex: 2,
-                child: Image.network(
-                  data.imageUrl,
-                  fit: BoxFit.fill,
-                  width: double.infinity,
+              Obx(
+                () => Expanded(
+                  flex: 2,
+                  child: isLoading.value
+                      ? Container(
+                          child: Center(child: CircularProgressIndicator()))
+                      : Image.network(
+                          data.imageUrl,
+                          fit: BoxFit.fill,
+                          width: double.infinity,
+                        ),
                 ),
               ),
               SizedBox(height: 10),

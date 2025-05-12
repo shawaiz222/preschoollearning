@@ -24,11 +24,11 @@ class CustomNavigationBar extends StatelessWidget {
           color: Colors.white,
         ),
         Icon(
-          Icons.now_widgets,
+          Icons.gamepad_outlined,
           color: Colors.white,
         ),
       ],
-    onTap: onClock,
+      onTap: onClock,
     );
   }
 }
