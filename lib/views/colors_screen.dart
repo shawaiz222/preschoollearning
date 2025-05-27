@@ -106,7 +106,9 @@ class _ColorsScreenState extends State<ColorsScreen> {
     );
   }
 
-void onClick({required String newAudio}) async {
-  await audioPlayer.stop();
-  await audioPlayer.play(AssetSource(newAudio)); // Correct way to play an asset file
-}}
+  void onClick({required String newAudio}) async {
+    await audioPlayer.stop();
+    await audioPlayer
+        .play(AssetSource(newAudio)); // Correct way to play an asset file
+  }
+}

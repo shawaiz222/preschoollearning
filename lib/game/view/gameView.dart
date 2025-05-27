@@ -7,8 +7,22 @@ import 'package:lottie/lottie.dart';
 
 import '../controller/gameController.dart';
 
-class GameView extends StatelessWidget {
+class GameView extends StatefulWidget {
+  @override
+  State<GameView> createState() => _GameViewState();
+}
+
+class _GameViewState extends State<GameView> {
   final controller = Get.put(GameController());
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    controller.backgroundPlayer.dispose();
+    controller.gameOverPlayer.dispose();
+    controller.jumpPlayer.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
